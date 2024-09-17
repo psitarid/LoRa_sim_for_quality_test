@@ -48,7 +48,7 @@ len_waiting_for_ack = []
 len_nodes_to_retransmit = []
 
 # Calculate Time on Air, payload duration, and ack duration
-ToA = round(ToA_calc.Time_on_Air(BW, SF, preamble, payload, header, CRC, DE, CR))
+ToA = round(ToA_calc.time_on_air(BW, SF, preamble, payload, header, CRC, DE, CR))
 T_payload = round(ToA_calc.find_payload_no_error_bits(BW, SF, payload, header, CRC, DE, CR))
 ack_duration = round(ToA_calc.find_ack_duration(BW, SF, preamble))
 

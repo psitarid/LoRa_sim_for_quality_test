@@ -11,7 +11,7 @@ def find_payload_no_error_bits(BW, SF, payload, header, CRC, DE, CR):
 
     return T_payload
 
-def Time_on_Air(BW, SF, preamble, payload, header, CRC, DE, CR):
+def time_on_air(BW, SF, preamble, payload, header, CRC, DE, CR):
     T_symbol = math.pow(2,SF)/BW *1000
     T_preamble = (preamble + 4.25)* T_symbol
     payload_symbols = 8 + np.max(np.ceil((8*payload-4*SF + 28 + 16*CRC - 20*header)/(4*(SF - 2*DE)))*(CR + 4),0)
